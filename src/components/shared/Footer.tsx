@@ -105,7 +105,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="text-center text-sm text-gray-500 mt-8 border-t border-gray-700 pt-4">
+      <div className="text-center text-sm text-gray-100 mt-8 border-t border-gray-700 pt-4">
         &copy; {new Date().getFullYear()} Otlob. All rights reserved.
       </div>
     </footer>
