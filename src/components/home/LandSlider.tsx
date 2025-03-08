@@ -47,7 +47,7 @@ export default function LandSlider() {
     <div className="slider-container" role="region" aria-label="Promotional Slider">
       <Slider {...settings}>
         {slidesData.map((slide, index) => (
-          <div key={index} className="slider-item h-[60dvh]" aria-live="polite">
+          <div key={index} className="slider-item h-[60dvh]" tabIndex={-1} aria-hidden="true">
             <div className={`w-full h-full ${slide.backgroundColor}`}>
               <div className="flex flex-col md:flex-row justify-center items-center h-full w-full md:w-[80%] p-10 mx-auto gap-10">
 
