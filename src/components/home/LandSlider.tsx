@@ -60,7 +60,7 @@ export default function LandSlider() {
                     {slide.description}
                   </p>
                   <button
-                    className="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="bg-sky-700 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     aria-label={`Shop Now for ${slide.title}`}
                   >
                     Shop Now
