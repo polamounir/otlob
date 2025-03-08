@@ -59,7 +59,7 @@ const settings = {
     <div className="slider-container" role="region" aria-label="Promotional Slider">
       <Slider {...settings}>
         {slidesData.map((slide, index) => (
-          <div key={index} className="slider-item h-[60dvh]" tabIndex={-1} aria-hidden="true">
+          <div key={index} className="slider-item h-[60dvh]" tabIndex={-1} aria-hidden="false">
             <div className={`w-full h-full ${slide.backgroundColor}`}>
               <div className="flex flex-col md:flex-row justify-center items-center h-full w-full md:w-[80%] p-10 mx-auto gap-10">
 
@@ -73,7 +73,7 @@ const settings = {
                   </p>
                   <button
                     className="bg-sky-700 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                    aria-label={`Shop Now for ${slide.title}`}
+                    aria-label={`Shop Now`}
                   >
                     Shop Now
                   </button>
@@ -88,7 +88,7 @@ const settings = {
                     height="600"
                     loading={index === 0 ? "eager" : "lazy"}
                     fetchPriority={index === 0 ? "high" : "auto"}
-                    className="w-auto h-auto max-w-full max-h-[50vh] object-cover "
+                    className="w-auto h-auto max-w-full max-h-[30vh] min-h-[175px] object-cover "
                   />
                 </div>
               </div>
