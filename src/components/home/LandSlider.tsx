@@ -31,17 +31,29 @@ const slidesData: SlideData[] = [
 ];
 
 export default function LandSlider() {
-  const settings = {
-    dots: true, // Show dots for better navigation
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000, // Increased for better UX
-    lazyLoad: "ondemand" as const,
-    arrows: false,
-  };
+const settings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  lazyLoad: "ondemand" as const,
+  arrows: false,
+  accessibility: true,
+  beforeChange: (current: number, next: number) => {
+    document.querySelectorAll(".slick-slide").forEach((slide, index) => {
+      const isActive = index === next;
+      slide.setAttribute("aria-hidden", isActive ? "false" : "true");
+
+      // Disable buttons/links in hidden slides
+      slide.querySelectorAll("button, a").forEach((el) => {
+        el.setAttribute("tabindex", isActive ? "0" : "-1");
+      });
+    });
+  },
+};
 
   return (
     <div className="slider-container" role="region" aria-label="Promotional Slider">

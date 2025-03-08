@@ -4,3 +4,7 @@
   src: url("/fonts/slick.woff") format("woff");
   font-display: swap;
 }
+.slick-slide[aria-hidden="true"] button,
+.slick-slide[aria-hidden="true"] a {
+  display: none !important;
+}
