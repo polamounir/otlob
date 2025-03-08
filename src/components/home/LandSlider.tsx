@@ -42,22 +42,11 @@ const settings = {
   lazyLoad: "ondemand" as const,
   arrows: false,
   accessibility: true,
-  beforeChange: (current: number, next: number) => {
-    document.querySelectorAll(".slick-slide").forEach((slide, index) => {
-      const isActive = index === next;
-      slide.setAttribute("aria-hidden", isActive ? "false" : "true");
-
-      // Disable buttons/links in hidden slides
-      slide.querySelectorAll("button, a").forEach((el) => {
-        el.setAttribute("tabindex", isActive ? "0" : "-1");
-      });
-    });
-  },
 };
 
   return (
-    <div className="slider-container" role="region" aria-label="Promotional Slider">
-      <Slider {...settings}>
+    <div className="slider-container" aria-label="Promotional Slider" aria-hidden="false">
+      <Slider {...settings} aria-hidden="false">
         {slidesData.map((slide, index) => (
           <div key={index} className="slider-item h-[60dvh]" tabIndex={-1} aria-hidden="false">
             <div className={`w-full h-full ${slide.backgroundColor}`}>
@@ -65,15 +54,16 @@ const settings = {
 
                 {/* Text Section */}
                 <div className="text-center md:text-left space-y-4">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-white lg:text-nowrap">
                     {slide.title}
                   </h1>
                   <p className="text-lg text-gray-700 dark:text-gray-300">
                     {slide.description}
                   </p>
                   <button
-                    className="bg-sky-700 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="bg-sky-700 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-lg  duration-200 "
                     aria-label={`Shop Now`}
+                    aria-hidden="false"
                   >
                     Shop Now
                   </button>

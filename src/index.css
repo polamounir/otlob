@@ -4,7 +4,16 @@
   src: url("/fonts/slick.woff") format("woff");
   font-display: swap;
 }
-.slick-slide[aria-hidden="true"] button,
-.slick-slide[aria-hidden="true"] a {
-  display: none !important;
+
+section {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+@media screen and (max-width: 767px) {
+  section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+  }
 }
