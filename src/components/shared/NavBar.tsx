@@ -44,7 +44,7 @@ export default function NavBar() {
             </li>
           </ul>
           <Link
-            to="/auth/login"
+            to="/login"
             className="bg-sky-700 hover:bg-sky-800 py-2.5 px-5 rounded-lg text-white font-semibold transition-colors"
           >
             Login
@@ -121,7 +121,7 @@ export default function NavBar() {
               </li>
               <li>
                 <Link
-                  to="/auth/login"
+                  to="/login"
                   className="block py-2.5 text-center bg-sky-700 text-white rounded-lg hover:bg-sky-800 transition-colors"
                   onClick={toggleMenu}
                 >

@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
+import Registeration from "./pages/Registeration";
+import Login from "./pages/Login";
 
 
 export default function AppRoutes() {
@@ -8,6 +10,8 @@ export default function AppRoutes() {
     <div className="pt-20">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Registeration />} />
 
 
         {/* Errors */}

@@ -5,13 +5,13 @@
   font-display: swap;
 }
 
-section {
+section > div {
   width: 80%;
   margin: 0 auto;
   padding: 2rem;
 }
 @media screen and (max-width: 767px) {
-  section {
+  section > div {
     width: 100%;
     margin: 0 auto;
     padding: 1rem;
