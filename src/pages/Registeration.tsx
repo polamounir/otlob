@@ -61,7 +61,9 @@ export default function RegistrationPage() {
         } catch (error: any) {
             if (error.response && error.response.data.errors) {
                 const errorsObj = error.response.data.errors;
-                const errorMessages = Object.entries(errorsObj).flatMap(([_, messages]) => messages);
+                const errorMessages = Object.entries(errorsObj).flatMap(([_, messages]) =>
+                    Array.isArray(messages) ? messages : [messages]
+                );
                 setErrors(errorMessages);
             } else {
                 setErrors(["An unexpected error occurred."]);
